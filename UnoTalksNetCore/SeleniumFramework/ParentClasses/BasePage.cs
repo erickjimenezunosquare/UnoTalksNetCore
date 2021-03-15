@@ -9,7 +9,7 @@ namespace Framework
         protected BasePage(Browser browser)
         {
             this.Browser = browser;
-            InitElements(); //was not originally here
+            InitElements();
         }
 
         public void InitElements()
