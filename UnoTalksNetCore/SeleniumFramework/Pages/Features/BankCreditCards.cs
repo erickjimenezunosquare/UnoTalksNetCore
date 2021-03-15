@@ -21,7 +21,7 @@ namespace Framework.Pages
         [FindsBy(How = How.Id, Using = "btn-1")]
         private readonly IWebElement _button1;
 
-        [FindsBy(How = How.Name, Using = "btn-2")]
+        [FindsBy(How = How.Name, Using = "btn2")]
         private readonly IWebElement _button2;
 
         #endregion Element locators
