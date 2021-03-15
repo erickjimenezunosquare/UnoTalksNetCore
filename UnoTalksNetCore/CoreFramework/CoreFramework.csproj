@@ -5,15 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Extras\SampleClass.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="89.0.4389.2300" />
     <PackageReference Include="WebDriver.ChromeDriver" Version="26.14.313457.1" />
   </ItemGroup>
 
