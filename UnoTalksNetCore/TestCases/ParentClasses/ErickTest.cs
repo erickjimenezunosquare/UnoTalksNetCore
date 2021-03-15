@@ -6,17 +6,17 @@ namespace TestCases.ParentClasses
 {
     public abstract class ErickTest : BankTest
     {
-        protected Pages Pages;        
+        protected BusinessObjects BusinessObjects;        
 
         protected void InitializeFramework()
         {
             InitializeBrowser();
-            InitializePages();
+            InitializeBusinessObjects();
         }
 
-        private void InitializePages()
+        private void InitializeBusinessObjects()
         {
-            Pages = new Pages(Browser);
+            BusinessObjects = new BusinessObjects(Browser);
         }
     }
 }

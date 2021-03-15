@@ -1,5 +1,7 @@
-﻿using Framework.Logger;
+﻿using Framework;
+using Framework.Logger;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using TestCases.ParentClasses;
 
@@ -28,74 +30,51 @@ namespace TestCases
         [Test()]
         public void ReportCard_Comb1_NoReplacement()
         {
-            Pages.BankHomePage
-                .LoginWithCredentials("14809876", "MyPa$$W0rd123")
-                .DoSomething();
+            BusinessObjects.BankHomePage
+                .LoginWithCredentials("ID_CreditCards");
 
-            Pages.BankCreditCards
-                .ReportCardAsLostOrStolen(false);
+            BusinessObjects.BankCreditCards
+                .ReportCardOnly();
         }
 
         [Test()]
         public void ReportCard_Comb2_Rush_OriginalAddress()
         {
-            Pages.BankHomePage
-                .LoginWithCredentials("14809876", "MyPa$$W0rd123")
-                .DoSomething();
+            BusinessObjects.BankHomePage
+                .LoginWithCredentials("ID_CreditCards");
 
-            Pages.BankCreditCards
-                .ReportCardAsLostOrStolen(true, Framework.Pages.DeliveryTypes.Rush);
+            BusinessObjects.BankCreditCards
+                .ReportCardRushReplacementOriginalAddress();
         }
 
         [Test()]
         public void ReportCard_Comb3_Rush_NewAddress()
         {
-            List<string> newAddressLines = new List<string>
-            {
-                "123 Main St",
-                "Apt. 3",
-                "90210",
-                "Beverly Hills",
-                "CA"
-            };
+            BusinessObjects.BankHomePage
+                .LoginWithCredentials("ID_CreditCards");
 
-            Pages.BankHomePage
-                .LoginWithCredentials("14809876", "MyPa$$W0rd123")
-                .DoSomething();
-
-            Pages.BankCreditCards
-                .ReportCardAsLostOrStolen(true, Framework.Pages.DeliveryTypes.Rush, newAddressLines);
+            BusinessObjects.BankCreditCards
+                .ReportCardRushReplacementNewAddress();
         }
 
         [Test()]
         public void ReportCard_Comb4_Free_OriginalAddress()
         {
-            Pages.BankHomePage
-                .LoginWithCredentials("14809876", "MyPa$$W0rd123")
-                .DoSomething();
+            BusinessObjects.BankHomePage
+                .LoginWithCredentials("ID_CreditCards");
 
-            Pages.BankCreditCards
-                .ReportCardAsLostOrStolen(true, Framework.Pages.DeliveryTypes.Free);
+            BusinessObjects.BankCreditCards
+                .ReportCardFreeReplacementOriginalAddress();
         }
 
         [Test()]
         public void ReportCard_Comb5_Free_NewAddress()
         {
-            List<string> newAddressLines = new List<string>
-            {
-                "123 Main St",
-                "Apt. 3",
-                "90210",
-                "Beverly Hills",
-                "CA"
-            };
+            BusinessObjects.BankHomePage
+                .LoginWithCredentials("ID_CreditCards");
 
-            Pages.BankHomePage
-                .LoginWithCredentials("14809876", "MyPa$$W0rd123")
-                .DoSomething();
-
-            Pages.BankCreditCards
-                .ReportCardAsLostOrStolen(true, Framework.Pages.DeliveryTypes.Free, newAddressLines);
+            BusinessObjects.BankCreditCards
+                .ReportCardFreeReplacementNewAddress();
         }
 
         #region Tear Down

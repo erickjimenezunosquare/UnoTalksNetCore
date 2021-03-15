@@ -9,10 +9,10 @@ namespace Framework
         protected BasePage(Browser browser)
         {
             this.Browser = browser;
-            InitElements();
+            InitElements(); //was not originally here
         }
 
-        private void InitElements()
+        public void InitElements()
         {
             PageFactory.InitElements(Browser.Driver, this);
         }       
