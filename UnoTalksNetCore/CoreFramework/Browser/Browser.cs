@@ -39,33 +39,3 @@ namespace Framework
         }
     }
 }
-
-#region Commented Code
-/*
-public class Browser
-    {
-        internal IWebDriver Driver { get; private set; }
-
-        public IWebDriver PickDriver()
-        {
-            ChromeOptions chromeOptions;
-            chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("--disable-extensions");
-            chromeOptions.AddArgument("--disable-notifications");
-            chromeOptions.AddUserProfilePreference("credentials_enable_service", false);
-            chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
-
-            Driver = new ChromeDriver(chromeOptions);
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            Driver.Manage().Window.Maximize();
-
-            return Driver;
-        }
-
-        public void Quit()
-        {
-            this.Driver.Quit();
-        }
-    }
-*/
-#endregion
