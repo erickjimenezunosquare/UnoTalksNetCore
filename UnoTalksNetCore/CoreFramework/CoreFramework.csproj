@@ -9,7 +9,7 @@
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="WebDriver.ChromeDriver" Version="26.14.313457.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400" />
   </ItemGroup>
 
   <ItemGroup>
