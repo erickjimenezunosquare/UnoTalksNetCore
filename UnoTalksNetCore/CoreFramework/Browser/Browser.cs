@@ -9,18 +9,27 @@ namespace Framework
     {
         internal IWebDriver Driver { get; set; }
 
-        public void PickDriver()
+        public void PickDriver(bool withOptions = false)
         {
-            ChromeOptions chromeOptions;
-            chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("--disable-extensions");
-            chromeOptions.AddArgument("--disable-notifications");
-            chromeOptions.AddUserProfilePreference("credentials_enable_service", false);
-            chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
+            if(withOptions)
+            {
+                ChromeOptions chromeOptions;
+                chromeOptions = new ChromeOptions();
+                chromeOptions.AddArgument("--disable-extensions");
+                chromeOptions.AddArgument("--disable-notifications");
+                chromeOptions.AddUserProfilePreference("credentials_enable_service", false);
+                chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
 
-            Driver = new ChromeDriver(chromeOptions);
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            Driver.Manage().Window.Maximize();
+                Driver = new ChromeDriver(chromeOptions);
+                Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+                Driver.Manage().Window.Maximize();
+            }
+            else
+            {
+                Driver = new ChromeDriver();
+                Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+                Driver.Manage().Window.Maximize();
+            }
         }
 
         public void GoToUrl(string url = "https://google.com")
@@ -39,33 +48,3 @@ namespace Framework
         }
     }
 }
-
-#region Commented Code
-/*
-public class Browser
-    {
-        internal IWebDriver Driver { get; private set; }
-
-        public IWebDriver PickDriver()
-        {
-            ChromeOptions chromeOptions;
-            chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("--disable-extensions");
-            chromeOptions.AddArgument("--disable-notifications");
-            chromeOptions.AddUserProfilePreference("credentials_enable_service", false);
-            chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
-
-            Driver = new ChromeDriver(chromeOptions);
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            Driver.Manage().Window.Maximize();
-
-            return Driver;
-        }
-
-        public void Quit()
-        {
-            this.Driver.Quit();
-        }
-    }
-*/
-#endregion
