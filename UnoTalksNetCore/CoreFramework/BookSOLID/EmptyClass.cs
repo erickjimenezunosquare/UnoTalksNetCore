@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace CoreFramework.BookSOLID
 {
     public class EmptyClass

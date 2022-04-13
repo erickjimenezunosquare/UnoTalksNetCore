@@ -33,3 +33,5 @@ UnoTalksNetCore/SeleniumFramework/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3
 /UnoTalksNetCore/CoreFramework/bin/Debug/netcoreapp3.1/CoreFramework.dll
 /UnoTalksNetCore/CoreFramework/bin/Debug/netcoreapp3.1/CoreFramework.deps.json
 /UnoTalksNetCore/CoreFramework/obj
+/UnoTalksNetCore/.vs/UnoTalksNetCore/v17
+/UnoTalksNetCore/SeleniumFramework/obj/Debug/netcoreapp3.1
