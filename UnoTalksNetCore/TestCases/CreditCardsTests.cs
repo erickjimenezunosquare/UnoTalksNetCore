@@ -3,6 +3,8 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using TestCases.ParentClasses;
 
+//Author: Erick Jiménez (erick9025@hotmail.com)
+
 namespace TestCases
 {
     [TestFixture()]
